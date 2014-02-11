@@ -1,0 +1,106 @@
+body{background-color:#cce8cf;}
+.cr-container{position:relative;width:600px;margin:0 auto;border:20px solid white;height:400px;text-align:center;}
+.cr-bgimg{width:600px;height:400px;background-image:url(../img/a.jpg);background-repeat:no-repeat:background-position:0 0;
+position:absolute;top:0px;left:0px;z-index:1;overflow:hidden;}
+.cr-bgimg div{width:25%;float:left;height:100%;position:relative;overflow:hidden;}
+.cr-bgimg div span{position:absolute;left:0px;top:0px;width:100%;height:100%;background-repeat:no-repeat;
+	text-indent:-999em;z-index:2;
+	-moz-transform:scale(1.5);
+	opacity:0;
+}
+
+.cr-bgimg div:nth-child(1) span{background-position:0 0;}
+.cr-bgimg div:nth-child(2) span{background-position:-150px 0;}
+.cr-bgimg div:nth-child(3) span{background-position:-300px 0;}
+.cr-bgimg div:nth-child(4) span{background-position:-450px 0;}
+
+
+.cr-container input{display:none;}
+.cr-container label{cursor:pointer;font-style:italic;color:white;z-index:100;width:25%;height:30px;position:relative;font-size:24px;
+	line-height:34px;margin-top:350px;float:left;
+}
+.cr-container label:before{background-color:rgba(130, 195, 217, 0.9);border-radius:100%;width:34px;height:34px;position:absolute;content:"";
+	box-shadow:0 0 0 4px rgba(255, 255, 255, 0.3);left:50%;margin-left:-17px;z-index:-1;
+}
+.cr-container label:after{position:absolute;right:0px;bottom:-20px;content:"";height:400px;width:1px;
+	background:-moz-linear-gradient(center top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+.cr-container input.cr-select-img-1:checked ~ .cr-bgimg, .cr-bgimg div span:nth-child(1){background-image:url(../img/a.jpg);}
+.cr-container input.cr-select-img-2:checked ~ .cr-bgimg, .cr-bgimg div span:nth-child(2){background-image:url(../img/b.jpg);}
+.cr-container input.cr-select-img-3:checked ~ .cr-bgimg, .cr-bgimg div span:nth-child(3){background-image:url(../img/c.jpg);}
+.cr-container input.cr-select-img-4:checked ~ .cr-bgimg, .cr-bgimg div span:nth-child(4){background-image:url(../img/d.jpg);}
+
+.cr-container input.cr-select-img-1:checked ~ label.cr-label-img-1:before,.cr-container input.cr-select-img-2:checked ~ label.cr-label-img-2:before,
+.cr-container input.cr-select-img-3:checked ~ label.cr-label-img-3:before,.cr-container input.cr-select-img-4:checked ~ label.cr-label-img-4:before{
+	background-color:white;
+	box-shadow:0 0 0 4px rgba(104, 171, 194, 0.6);
+}
+.cr-container input.cr-select-img-1:checked ~ label.cr-label-img-1,.cr-container input.cr-select-img-2:checked ~ label.cr-label-img-2,
+.cr-container input.cr-select-img-3:checked ~ label.cr-label-img-3,.cr-container input.cr-select-img-4:checked ~ label.cr-label-img-4{color:#68abc2;}
+
+.cr-container input:checked ~ .cr-bgimg div span{
+	-moz-animation: scaleOut 0.6s ease-in-out;
+}
+
+.cr-container input.cr-select-img-1:checked ~ .cr-bgimg div span:nth-child(1),.cr-container input.cr-select-img-2:checked ~ .cr-bgimg div span:nth-child(2),
+.cr-container input.cr-select-img-3:checked ~ .cr-bgimg div span:nth-child(3),.cr-container input.cr-select-img-4:checked ~ .cr-bgimg div span:nth-child(4){
+	z-index:10000;
+	-moz-animation:none;
+	-moz-transition:-moz-transform 0.5s ease-in-out, opacity 0.5s ease-in-out,  z-index 0s linear 0.6s;
+	-moz-transform:scale(1);
+	opacity:1;
+}
+
+@-moz-keyframes scaleOut{
+	0%{
+		-moz-transform:scale(1);opacity:1;
+	}
+	100%{
+		-moz-transform:scale(1.5);opacity:0;
+	}
+}
+
+.cr-container h3{margin:0px;color:white;position:absolute;z-index:1000;top:50%;left:0px;opacity:0;width:100%;
+	-moz-transition: opacity 0.8s ease-in-out 0s;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.cr-container h3 span:nth-child(1){
+	display:block;font-size:70px;letter-spacing:10px;
+}
+.cr-container h3 span:nth-child(2){
+	background-color:rgba(104, 171, 194, 0.9);display:block;font-style:italic;font-size:14px;padding:10px;
+}
+.cr-container input.cr-select-img-1:checked ~ .cr-titles h3:nth-child(1),.cr-container input.cr-select-img-2:checked ~ .cr-titles h3:nth-child(2),
+.cr-container input.cr-select-img-3:checked ~ .cr-titles h3:nth-child(3),.cr-container input.cr-select-img-4:checked ~ .cr-titles h3:nth-child(4){
+	opacity:1;
+}
+aside{position:fixed;top:20px;left:50%;margin-left:-500px;border:10px solid navy;}
+aside ul{padding:0px;margin:0px;width:120px;text-align:center;}
+aside ul li{list-style:none outside;background-color:pink;border-bottom:2px solid black;line-height:25px;cursor:pointer;margin-bottom:3px;}
+aside ul li:last-child{margin-bottom:0px;}
+aside ul li.cur{background-color:#68ABC2;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

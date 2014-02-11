@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>test</title>
+		<link id="css" href="css/slideOut.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<section class="cr-container">
+			
+			<input type="radio" id="select-img-1" class="cr-select-img-1" checked="checked" name="radio-set-1" />
+			<label for="select-img-1" class="cr-label-img-1"> 1</label>
+			<input type="radio" id="select-img-2" class="cr-select-img-2" name="radio-set-1" />
+			<label for="select-img-2" class="cr-label-img-2"> 2</label>
+			<input type="radio" id="select-img-3" class="cr-select-img-3" name="radio-set-1" />
+			<label for="select-img-3" class="cr-label-img-3"> 3</label>
+			<input type="radio" id="select-img-4" class="cr-select-img-4" name="radio-set-1" />
+			<label for="select-img-4" class="cr-label-img-4"> 4</label>
+			
+			<div class="cr-bgimg">
+				<div> 
+					<span>Slice 1 - Image1</span>
+					<span>Slice 1 - Image2</span>
+					<span>Slice 1 - Image3</span>
+					<span>Slice 1 - Image4</span>
+				</div>
+				<div> 
+					<span>Slice 1 - Image1</span>
+					<span>Slice 1 - Image2</span>
+					<span>Slice 1 - Image3</span>
+					<span>Slice 1 - Image4</span>
+				</div>
+				<div>
+					<span>Slice 1 - Image1</span>
+					<span>Slice 1 - Image2</span>
+					<span>Slice 1 - Image3</span>
+					<span>Slice 1 - Image4</span>
+				</div>
+				<div>
+					<span>Slice 1 - Image1</span>	
+					<span>Slice 1 - Image2</span>
+					<span>Slice 1 - Image3</span>
+					<span>Slice 1 - Image4</span>
+				</div>
+			</div>	
+			
+			<div class="cr-titles">
+				<h3>
+					<span>朴信惠图片一</span>
+					<span>What you've been dreaming of</span>
+				</h3>
+				<h3>
+					<span>朴信惠图片二</span>
+					<span>What you've been dreaming of</span>
+				</h3>
+				<h3>
+					<span>朴信惠图片三</span>
+					<span>What you've been dreaming of</span>
+				</h3>
+				<h3>
+					<span>朴信惠图片四</span>
+					<span>What you've been dreaming of</span>
+				</h3>
+			</div>
+		</section>
+		<aside>
+			<ul id="href">
+				<li class="cur">slideOut</li>
+				<li>slideOutRight</li>
+				<li>slideOutUp</li>
+				<li>scaleOut</li>
+			</ul>
+		</aside>
+		<script type="text/javascript">
+			window.onload = function () {
+				var href = document.getElementById( "href" );
+				var li = href.getElementsByTagName( "li" );
+				for(var i = 0; i < li.length; i++){
+					li[i].onclick = function(){
+						for(var j = 0; j < li.length; j++){
+							li[j].className = "";
+						}
+						this.className = "cur";
+						var text = this.firstChild.nodeValue;
+						var link = document.getElementById( "css" );
+						link.href = "css/" + text + ".css";
+					}
+				}
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
